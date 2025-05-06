@@ -1,0 +1,2 @@
+# HardwareSerialMonitor_v2
+HardwareSerialMonitor_v2 based on LibreOpenHardwareMonitor

@@ -53,7 +53,7 @@ To allow HardwareSerialMonitor_v2 to run on Windows startup…
 
 1) the install location must be C:\Program Files (x86)\HardwareSerialMonitor_v2
 
-2) Goto the Windows "Startup" folder here "%AppData%\Microsoft\Windows\Start Menu\Programs\Startup"
+2) Goto the Windows "Startup" folder here "%AppData%\Microsoft\Windows\Start Menu\Programs\Startup" (you can paste this in windows file explorer)
 
 
 3) Place the .vbs file from the AutoRunOnWindowsStartup folder in the HardwareSerialMonitor_v2 directory, eg. "HardwareSerialMonitor_v2.vbs" (command window)  or "HardwareSerialMonitor_v2Silent.vbs" (Silent operation, no command window) 

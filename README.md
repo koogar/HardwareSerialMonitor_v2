@@ -12,7 +12,7 @@ This project is licensed under GPL v2.
 LibreHardwareMonitor library is licensed under Mozilla Public License 2.0.
 
 
-Following fields are supported for custom format
+Following fields are supported for custom format.
 - CpuName
 - CpuTemperature
 - CpuLoad
@@ -32,41 +32,38 @@ Following fields are supported for custom format
 - RamLoad
 - RamUsed
 - RamAvailable
+- 
+#  Installation Notes:
 
+Unlike the original HardwareSerialMonitor, HardwareSerialMonitor_v2 has no tray icon where you can access settings such as selecting the desired com port. It either runs a command window logging the ticks when connected after the com port has been correctly configured in the appsettings.json file in the program root, or silently with no command window.
 
-
-
-
-
-#  Installation
+#  installation:
 
 Please make sure you have the latest .net 9 runtime installed https://dotnet.microsoft.com/download/dotnet/9.0
 
-Change the COM port number to match your Arduino in appsettings.json (open with notepad)
-Note: your Arduino COM port can change if you plug it in a different USB port so you may have to update the appsettings.json in the future
+Change the COM port number to match your Arduino in appsettings.json (open with notepad).
+
+Note: your Arduino COM port can change if you plug it in a different USB port so you may have to update the appsettings.json in the future.
 
 Always run HardwareSerialMonitor_v2.exe as administrator by changing the file properties!!!
 
-
+# Auto run on startup:
 
 To allow HardwareSerialMonitor_v2 to run on Windows startup…
 
-1) the install location must be C:\Program Files (x86)\HardwareSerialMonitor_v2
+1) the install location must be C:\Program Files (x86)\HardwareSerialMonitor_v2 (or edit the .vbs)
 
 2) Goto the Windows "Startup" folder here "%AppData%\Microsoft\Windows\Start Menu\Programs\Startup" (you can paste this in windows file explorer)
 
 
 3) Place the .vbs file from the AutoRunOnWindowsStartup folder in the HardwareSerialMonitor_v2 directory, eg. "HardwareSerialMonitor_v2.vbs" (command window)  or "HardwareSerialMonitor_v2Silent.vbs" (Silent operation, no command window) 
-in the windows startup folder
-
-
-
+in the windows startup folder.
 
 Next time Windows runs, HardwareSerialMonitor_v2 will autostart on the last know USB port
 
-Note: 
+# Note: 
 
-If you changed/Moved the default installation directory you will need to edit the "HardwareSerialMonitor_v2.vbs" or "HardwareSerialMonitor_v2Silent.vbs" in notepad etc, to reflect those changes
+If you changed/Moved the default installation directory you will need to edit the "HardwareSerialMonitor_v2.vbs" or "HardwareSerialMonitor_v2Silent.vbs" in notepad etc, to reflect those changes.
 
 
 

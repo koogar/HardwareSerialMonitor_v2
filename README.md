@@ -10,8 +10,8 @@
 [GitHub Repository](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
 
 It is based on **Wee Hardware Stat Server** (compatible with **Gnat-Stats** and **Phat-Stats**) thanks to Vinod Mishra (2021), who made it compatible with GnatStas & PhatStats OLED/LCD displays by R.Hirst (https://tallmanlabs.com).
-[GitHub Repository](https://github.com/koogar/Gnat-Stats)
-[GitHub Repository](https://github.com/koogar/Phat-Stats)
+
+[GnatStats Repository](https://github.com/koogar/Gnat-Stats) / [PhatStats Repository](https://github.com/koogar/Phat-Stats)
 
 
 The project is licensed under **GPL v2**.  

@@ -7,16 +7,19 @@
 
 **HardwareSerialMonitor_v2** is a lightweight server that uses **LibreHardwareMonitor** to send PC hardware data over a **serial port**—ideal for integration with an **Arduino** or similar microcontroller.
 
-[GitHub Repository](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
+[LibreHardwareMonitor GitHub Repository](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
 
-It is based on **Wee Hardware Stat Server** (compatible with **Gnat-Stats** and **Phat-Stats**) thanks to Vinod Mishra (2021), who made it compatible with GnatStas & PhatStats OLED/LCD displays by R.Hirst (https://tallmanlabs.com).
-[GitHub Repository](https://github.com/koogar/Gnat-Stats)
-[GitHub Repository](https://github.com/koogar/Phat-Stats)
+It is based on **Wee Hardware Stat Server**  thanks to Vinod Mishra (2021),
+(https://gitlab.com/vinodmishra/wee-hardware-stat-server)
+
+who made it compatible with GnatStas & PhatStats OLED/LCD displays by R.Hirst (https://tallmanlabs.com).
+
+[GnatStats GitHub Repository](https://github.com/koogar/Gnat-Stats) / [PhatStats GitHub Repository](https://github.com/koogar/Phat-Stats)
 
 
 The project is licensed under **GPL v2**.  
 The **LibreHardwareMonitor** library is licensed under the **Mozilla Public License 2.0**.
-(https://gitlab.com/vinodmishra/wee-hardware-stat-server)
+
 ## Hardware connection Guides
 
 Arduino Hookup guides for GnatStats & PhatStats OLED/LCD displays can be found on https://tallmanlabs.com.

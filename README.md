@@ -34,6 +34,56 @@ You can customize the output format using the following fields:
 
 ---
 
+| Feature/Aspect              | **HardwareSerialMonitor (Original)**                                         | **HardwareSerialMonitor\_v2 (Updated)**                                                                     |
+| --------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Base Project**            | Original app by Rupert Hirst & Colin Conway                                  | Original app by Vinod Mishra Fork/upgrade by Rupert Hirst                                                                     |
+| **Tray Icon / UI**          | ✅ Has a system tray icon for easy access to settings like COM port selection | ❌ No tray icon or UI; all settings are configured manually in `appsettings.json`                            |
+| **Configuration**           | Via tray icon or settings menu                                               | Only via `appsettings.json` file                                                                            |
+| **Startup Options**         | Controlled via tray icon or manual                                           | Uses `.vbs` scripts for auto-start (silent or visible modes)                                                |
+| **Logging**                 | Unknown/limited                                                              | Logs ticks in command window or runs silently                                                               |
+| **Output Fields Supported** | Fewer fields                                                                 | ✅ More fields supported (added GPU/RAM stats, power readings, fan speeds, etc.)                             |
+| **Format Customization**    | Basic                                                                        | ✅ Fully customizable format strings                                                                         |
+| **Installation Location**   | Flexible                                                                     | Recommended in `C:\Program Files (x86)\HardwareSerialMonitor_v2` (for `.vbs` scripts to work without edits) |
+| **.NET Version Required**   | Older (.NET 4.x or similar)                                                  | Requires **.NET 9 runtime**                                                                                 |
+| **License**                 | GPL v2   uses OpenHardwareMonitor                                            | GPL v2 + uses LibreHardwareMonitor (MPL 2.0)                                                                |
+| **Target Users**            | Beginners/hobbyists needing simple setup                                     | Intermediate users comfortable editing config files                                                         |
+| **Development Status**      | No longer actively updated                                                   | Active fork with planned features                                                                           |
+
+
+## ✅ **Key Improvements in v2:**
+
+* **Expanded sensor data support:** More GPU stats, RAM stats, and fan metrics.
+* **Format flexibility:** You can build a custom string output instead of a fixed format.
+* **Headless/silent mode:** Can run silently at startup using provided `.vbs` scripts.
+* **Cleaner architecture:** No dependencies on UI libraries for tray icon → lighter memory footprint.
+* **LibreHardwareMonitor has active development for futureproofing new hardware**
+
+---
+
+## ⚠️ **Key Tradeoffs in v2:**
+
+* ❌ No easy GUI → users must edit config files manually.
+* ❌ COM port selection must be updated in `appsettings.json` if hardware/port changes.
+* ❌ Less beginner-friendly for non-technical users.
+
+---
+
+## 💡 **When to choose which?**
+
+| If you want…                                     | → **Use**                        |
+| ------------------------------------------------ | -------------------------------- |
+| Easy config through a tray icon UI               | HardwareSerialMonitor (original) |
+| More output fields, flexibility, future-proofing | HardwareSerialMonitor\_v2        |
+| Auto-start silent operation with no window       | HardwareSerialMonitor\_v2        |
+| Minimal setup, no editing JSON manually          | HardwareSerialMonitor (original) |
+
+---
+
+### 📝 **In summary:**
+
+`HardwareSerialMonitor_v2` improves **flexibility and feature set** but sacrifices **user interface convenience**. It’s better suited for users comfortable with **manual config**. The original version is better for those who prefer **GUI-based configuration** without editing files.
+
+
 ## Installation Notes
 
 Unlike the original **HardwareSerialMonitor**, version 2 **does not include a system tray icon** for configuration.  

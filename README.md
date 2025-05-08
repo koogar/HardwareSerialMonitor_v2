@@ -40,7 +40,7 @@ You can customize the output format using the following fields:
 | **Tray Icon / UI**          | ✅ Has a system tray icon for easy access to settings like COM port selection | ❌ No tray icon or UI; all settings are configured manually in `appsettings.json`                            |
 | **Configuration**           | Via tray icon or settings menu                                               | Only via `appsettings.json` file                                                                            |
 | **Startup Options**         | Controlled via tray icon or manual                                           | Uses `.vbs` scripts for auto-start (silent or visible modes)                                                |
-| **Logging**                 | Unknown/limited                                                              | Logs ticks in command window or runs silently                                                               |
+| **Logging**                 | Unknown/limited                                                              | Logs ticks in terminal window or runs silently                                                               |
 | **Output Fields Supported** | Fewer fields                                                                 | ✅ More fields supported (added GPU/RAM stats, power readings, fan speeds, etc.)                             |
 | **Format Customization**    | Basic                                                                        | ✅ Fully customizable format strings                                                                         |
 | **Installation Location**   | Flexible                                                                     | Recommended in `C:\Program Files (x86)\HardwareSerialMonitor_v2` (for `.vbs` scripts to work without edits) |
@@ -90,7 +90,7 @@ Unlike the original **HardwareSerialMonitor**, version 2 **does not include a sy
 Instead, configuration is done manually via the `appsettings.json` file in the program folder.
 
 When running:
-- A **command window** will appear to log connection ticks (if not running silently).
+- A **terminal window** will appear to log connection worker ticks (if not running silently).
 - Or it runs **silently in the background** (depending on how you launch it).
 
 ---
@@ -126,7 +126,7 @@ Open File Explorer and paste:
 %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 
 3. Copy one of the `.vbs` files from the program’s `AutoRunOnWindowsStartup` folder into the Startup folder:
-- `HardwareSerialMonitor_v2.vbs` → starts with a command window.
+- `HardwareSerialMonitor_v2.vbs` → starts with a terminal window.
 - `HardwareSerialMonitor_v2Silent.vbs` → starts silently in the background.
 
 4. ✅ Done! The program will automatically launch at startup, using the last known COM port.
@@ -139,7 +139,7 @@ If you installed the program to a different folder (not `C:\Program Files (x86)\
 ## Notes
 
 - **No graphical interface or tray icon**—all settings must be configured via `appsettings.json`.
-- Use the `.vbs` launcher of your choice depending on whether you want a visible command window or silent execution.
+- Use the `.vbs` launcher of your choice depending on whether you want a visible terminal window or silent execution.
 - For displaying PC stats on an Arduino-connected display (OLED, LCD, etc.) running GnatStats or PhatStats.
 
 ---

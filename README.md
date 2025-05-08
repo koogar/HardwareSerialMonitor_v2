@@ -71,6 +71,7 @@ You can customize the output format using the following fields:
 * **Headless/silent mode:** Can run silently at startup using provided `.vbs` scripts.
 * **Cleaner architecture:** No dependencies on UI libraries for tray icon → lighter memory footprint.
 * **LibreHardwareMonitor has active development for futureproofing new hardware**
+* * **Bluetooth Virtual Com**: Virtual Com ports are now stored and reconnect each time HardwareSerialMonitor_v2 runs.
 
 ---
 

@@ -59,9 +59,14 @@ To have **HardwareSerialMonitor_v2** start automatically when Windows boots:
    C:\Program Files (x86)\HardwareSerialMonitor_v2 
 *(If you install elsewhere, you will need to manually edit the script paths—see step 4.)*
 
-2. Navigate to the Windows **Startup folder**:    
-Open File Explorer and paste:
-%AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+2. Open the Windows Startup Folder:
+
+   - Press Win + R to open the Run dialog.
+   - Type (or copy-paste) the following path and press Enter:
+
+     %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+
+   This will open the Startup folder in File Explorer.
 
 3. Copy one of the `.vbs` files from the program’s `AutoRunOnWindowsStartup` folder into the Startup folder:
 - `HardwareSerialMonitor_v2.vbs` → starts with a terminal window.
@@ -73,7 +78,4 @@ Open File Explorer and paste:
 If you installed the program to a different folder (not `C:\Program Files (x86)\HardwareSerialMonitor_v2`), you will need to edit the `.vbs` file using Notepad and update the file paths inside the script.
 
 ---
-
-
-
 

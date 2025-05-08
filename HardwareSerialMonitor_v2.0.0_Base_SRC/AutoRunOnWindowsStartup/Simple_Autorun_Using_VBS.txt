@@ -1,19 +1,37 @@
-To allow HardwareSerialMonitor_v2 to run on Windows startup…
 
-1) the install location must be C:\Program Files (x86)\HardwareSerialMonitor_v2
+How to Run HardwareSerialMonitor_v2 on Windows Startup
 
-2) Goto the Windows "Startup" folder here "%AppData%\Microsoft\Windows\Start Menu\Programs\Startup" (you can paste this into Windows File Explorer)
+1. Open the Windows Startup Folder:
+
+   - Press Win + R to open the Run dialog.
+   - Type (or copy-paste) the following path and press Enter:
+
+     %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+
+   This will open the Startup folder in File Explorer.
+
+2. Create a Shortcut:
+
+   - Right-click inside the Startup folder.
+   - Select New → Shortcut.
+   - In the location field, click Browse and navigate to:
+
+     C:\Program Files (x86)\HardwareSerialMonitor_v2
+
+   - Select the file HardwareSerialMonitor_v2.vbs or HardwareSerialMonitor_v2_Silent.vbs and click OK.
+   - Click Next.
+   - Name the shortcut:
+
+     HardwareSerialMonitor_v2-Shortcut
+
+   - Click Finish.
+
+3. Done!
+   Next time Windows starts, HardwareSerialMonitor_v2 will automatically run on the last known USB port.
+
+Note:
+If you installed HardwareSerialMonitor_v2 in a different directory, you will need to manually edit the path inside HardwareSerialMonitor_v2.vbs using Notepad or a text editor to reflect the new installation directory.
 
 
-3) Place the .vbs file , eg. "HardwareSerialMonitor_v2.vbs" (command window)  or "HardwareSerialMonitor_v2Silent.vbs" (Silent operation, no command window) 
-in the startup folder
 
-
-
-
-Next time Windows runs, HardwareSerialMonitor_v2 will autostart on the last know USB port
-
-Note: 
-
-If you changed/Moved the default installation directory you will need to edit the "HardwareSerialMonitor_v2.vbs" or "HardwareSerialMonitor_v2Silent.vbs" in notepad etc, to reflect those changes
 

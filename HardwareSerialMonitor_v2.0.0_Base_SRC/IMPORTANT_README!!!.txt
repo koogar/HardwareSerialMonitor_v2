@@ -57,7 +57,7 @@ To have **HardwareSerialMonitor_v2** start automatically when Windows boots:
 
 1. Install the program to:
    C:\Program Files (x86)\HardwareSerialMonitor_v2 
-*(If you install elsewhere, you will need to manually edit the script paths—see step 4.)*
+*(If you install elsewhere, you will need to manually edit the script paths.)*
 
 2. Open the Windows Startup Folder:
 

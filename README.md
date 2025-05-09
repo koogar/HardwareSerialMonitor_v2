@@ -127,6 +127,7 @@ When running:
    - Check **“Run this program as administrator”**.
 
 ---
+## How to Run HardwareSerialMonitor_v2 on Windows Startup
 
 1. Open the Windows Startup Folder:
 

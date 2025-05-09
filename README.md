@@ -128,31 +128,36 @@ When running:
 
 ---
 
-## Auto-Start on Windows
-
-To have **HardwareSerialMonitor_v2** start automatically when Windows boots:
-
-1. Install the program to:
-   C:\Program Files (x86)\HardwareSerialMonitor_v2 
-*(If you install elsewhere, you will need to manually edit the script paths)*
-
-2. Open the Windows Startup Folder:
+1. Open the Windows Startup Folder:
 
    - Press Win + R to open the Run dialog.
-   - Type (or copy-paste) the following path and press Enter:
+   - Type (or copy-paste) the following press Enter:
 
-     %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+    shell:startup
 
    This will open the Startup folder in File Explorer.
 
-3. Copy one of the `.vbs` files from the program’s `AutoRunOnWindowsStartup` folder into the Startup folder:
-- `HardwareSerialMonitor_v2.vbs` → starts with a terminal window.
-- `HardwareSerialMonitor_v2Silent.vbs` → starts silently in the background.
-  
-4. ✅ Done! The program will automatically launch at startup, using the last known COM port.
+2. Create a Shortcut:
 
-**Important:**  
-If you installed the program to a different folder (not `C:\Program Files (x86)\HardwareSerialMonitor_v2`), you will need to edit the `.vbs` file using Notepad and update the file paths inside the script.
+   - Right-click inside the Startup folder.
+   - Select New → Shortcut.
+   - In the location field, click Browse and navigate to:
+
+     C:\Program Files (x86)\HardwareSerialMonitor_v2
+
+   - Select the file HardwareSerialMonitor_v2.vbs or HardwareSerialMonitor_v2_Silent.vbs and click OK.
+   - Click Next.
+   - Name the shortcut:
+
+     HardwareSerialMonitor_v2-Shortcut
+
+   - Click Finish.
+
+3. Done!
+   Next time Windows starts, HardwareSerialMonitor_v2 will automatically run on the last known USB port.
+
+Note:
+If you installed HardwareSerialMonitor_v2 in a different directory, you will need to manually edit the path inside HardwareSerialMonitor_v2.vbs using Notepad or a text editor to reflect the new installation directory.
 
 ---
 

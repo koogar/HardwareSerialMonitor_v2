@@ -106,6 +106,8 @@ Instead, configuration is done manually via the `appsettings.json` file in the p
 
 When running:
 - A **terminal window** will appear to log connection worker ticks (if not running silently).
+ ![](https://github.com/koogar/HardwareSerialMonitor_v2/blob/main/images/HardwareSerialMonitor_v2_Terminal.png)
+
 - Or it runs **silently in the background** (depending on how you launch it).
 
 ---

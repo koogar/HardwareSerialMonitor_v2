@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using LibreHardwareMonitor.Hardware;
 using HardwareSerialMonitor_v2.Models;
 using HardwareSerialMonitor_v2.Services;
@@ -14,25 +15,27 @@ using HardwareSerialMonitor_v2;
 public class TrayApp : Form
 {
     private NotifyIcon trayIcon;
-    private ContextMenuStrip trayMenu;
+    private ContextMenu trayMenu;
     private IHost _host;
 
     public TrayApp()
     {
-        trayMenu = new ContextMenuStrip();
-        trayMenu.Items.Add("Exit", null, OnExit);
-
+        // Tray icon setup
+        trayMenu = new ContextMenu();
+        trayMenu.MenuItems.Add("Exit", OnExit);
         trayIcon = new NotifyIcon
         {
             Text = "Hardware Serial Monitor",
-            Icon = new Icon("HardwareSerialMonitor_v2.ico"),
-            ContextMenuStrip = trayMenu,
+            Icon = new Icon("icon.ico"),
+            ContextMenu = trayMenu,
             Visible = true
         };
 
+        // Form minimized and hidden
         this.WindowState = FormWindowState.Minimized;
         this.ShowInTaskbar = false;
 
+        // Start the host in background
         Task.Run(StartHostAsync);
     }
 
@@ -45,12 +48,13 @@ public class TrayApp : Form
     private async Task StartHostAsync()
     {
         _host = Host.CreateDefaultBuilder()
-            .ConfigureAppConfiguration((_, config) => { })
-            .ConfigureServices((context, services) =>
+            .ConfigureAppConfiguration((_, configApp) => { }) // Add command line args if needed
+            .ConfigureServices((hostContext, services) =>
             {
+                // Service registration from original Program.cs
                 services.AddHostedService<Worker>();
-                services.AddSingleton(GetConfigSection<OutputSettings>(context.Configuration));
-                services.AddSingleton(GetConfigSection<SerialPortSettings>(context.Configuration));
+                services.AddSingleton(GetConfigSection<OutputSettings>(hostContext.Configuration));
+                services.AddSingleton(GetConfigSection<SerialPortSettings>(hostContext.Configuration));
                 services.AddSingleton<IVisitor, UpdateVisitor>();
                 services.AddSingleton<IHardwareMonitorService, LibreHardwareMonitorService>();
                 services.AddSingleton<IHWiNFOHardwareMonitorService, HWiNFOHardwareMonitorService>();
@@ -74,11 +78,11 @@ public class TrayApp : Form
         await _host.RunAsync();
     }
 
-    private static T GetConfigSection<T>(IConfiguration config, string name = null) where T : new()
+    private static T GetConfigSection<T>(IConfiguration configuration, string name = null) where T : new()
     {
-        var section = new T();
-        config.GetSection(name ?? typeof(T).Name).Bind(section);
-        return section;
+        var configSection = new T();
+        configuration.GetSection(name ?? configSection.GetType().Name).Bind(configSection);
+        return configSection;
     }
 
     private void OnExit(object sender, EventArgs e)
